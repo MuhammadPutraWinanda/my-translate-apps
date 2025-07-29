@@ -3,13 +3,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @layer base {
-  button {
+  button,
+  select {
     cursor: pointer;
   }
   textarea {
     resize: none;
-  }
-  select {
-    cursor: pointer;
   }
 }
