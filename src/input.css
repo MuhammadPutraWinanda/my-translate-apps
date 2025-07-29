@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  button {
+    cursor: pointer;
+  }
+  textarea {
+    resize: none;
+  }
+  select {
+    cursor: pointer;
+  }
+}

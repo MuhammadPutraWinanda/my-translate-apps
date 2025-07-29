@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Translate App</title>
+
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+
+    <!-- TailwindCSS -->
+    <link rel="stylesheet" href="src/style.css" />
+
+    <!-- My Own JS -->
+    <script defer src="src/js/main.js"></script>
+  </head>
+  <body class="px-4 sm:px-12 md:px-25 dark:bg-slate-800 dark:text-white">
+    <header>
+      <div class="mt-4 flex justify-end items-center gap-1.5">
+        <span>Light</span>
+        <label for="checkbox">
+          <input type="checkbox" id="checkbox" class="hidden peer" />
+          <div
+            id="toggleContainer"
+            class="w-10 h-5 p-0.5 bg-gray-300 rounded-lg flex items-center cursor-pointer peer-checked:justify-end dark:bg-gray-500"
+          >
+            <div
+              class="w-4.5 h-4.5 bg-white rounded-full pointer-events-none"
+            ></div>
+          </div>
+        </label>
+        <span>Dark</span>
+      </div>
+      <h1 class="text-3xl pt-8 font-semibold text-center lg:text-4xl">
+        My Translate Apps
+      </h1>
+    </header>
+    <main class="my-8 lg:my-12 lg:flex lg:gap-4">
+      <div
+        id="inputContainer"
+        class="bg-white shadow-xl border border-black/40 rounded-xl px-4 py-3 lg:grow-1 dark:bg-slate-700 dark:border-white/20"
+      >
+        <div
+          id="langListInput"
+          class="flex gap-9 pb-3 mb-4 ps-2 border-b border-b-black/40 dark:border-b-white/20"
+        >
+          <select
+            name="selectLangInput"
+            id="selectLangInput"
+            class="border border-black/40 px-3 py-1.5 rounded-lg outline-none dark:border-white/20"
+          >
+            <option value="id">Indonesia</option>
+            <option value="en">Inggris</option>
+            <option value="ko">Korea</option>
+            <option value="zh">China</option>
+            <option value="de">Jerman</option>
+            <option value="fr">Prancis</option>
+            <option value="es">Spanyol</option>
+          </select>
+        </div>
+
+        <form id="inputTextForm">
+          <textarea
+            id="inputText"
+            class="outline-none min-w-full h-35"
+            placeholder="Masukkan Teks"
+            maxlength="500"
+          ></textarea>
+          <p class="text-end text-sm mt-2">
+            <span id="characterCounter">0</span>/500
+          </p>
+          <div class="flex justify-between mt-2">
+            <div>
+              <button
+                id="btnSpeechInput"
+                type="button"
+                class="border-2 px-1.5 rounded-lg"
+              >
+                <i class="fa-solid fa-volume-low pointer-events-none"></i>
+              </button>
+              <button
+                id="btnCopyInput"
+                type="button"
+                class="border-2 px-1.5 rounded-lg"
+              >
+                <i class="fa-solid fa-copy pointer-events-none"></i>
+              </button>
+            </div>
+            <button
+              type="submit"
+              class="bg-sky-500 text-sm text-white font-semibold px-5 py-2 rounded-lg hover:bg-sky-600 active:bg-sky-700 dark:bg-sky-700 dark:hover:bg-sky-800 dark:active:bg-sky-900"
+            >
+              <i class="fa-solid fa-language"></i> Translate
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div
+        id="outputContainer"
+        class="bg-white shadow-xl border border-black/40 rounded-xl mt-4 px-4 py-3 lg:mt-0 lg:grow-1 dark:bg-slate-700 dark:border-white/20"
+      >
+        <div
+          id="langListOutput"
+          class="flex gap-9 pb-3 mb-4 ps-2 border-b border-b-black/40 dark:border-b-white/20"
+        >
+          <select
+            name="selectLangOutput"
+            id="selectLangOutput"
+            class="border border-black/40 px-3 py-1.5 rounded-lg outline-none dark:border-white/20"
+          >
+            <option value="id">Indonesia</option>
+            <option value="en" selected>Inggris</option>
+            <option value="ko">Korea</option>
+            <option value="zh">China</option>
+            <option value="de">Jerman</option>
+            <option value="fr">Prancis</option>
+            <option value="es">Spanyol</option>
+          </select>
+        </div>
+
+        <div>
+          <textarea
+            id="outputText"
+            class="outline-none min-w-full h-35"
+            placeholder="Terjemahan"
+            readonly
+          ></textarea>
+          <div class="my-1.5 lg:my-0 lg:mt-9.5">
+            <button
+              id="btnSpeechOutput"
+              type="button"
+              class="border-2 px-1.5 rounded-lg"
+            >
+              <i class="fa-solid fa-volume-low pointer-events-none"></i>
+            </button>
+            <button
+              id="btnCopyOutput"
+              type="button"
+              class="border-2 px-1.5 rounded-lg"
+            >
+              <i class="fa-solid fa-copy pointer-events-none"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
